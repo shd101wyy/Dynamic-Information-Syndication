@@ -11,6 +11,7 @@ The specification might change in the future.
 	- [channel elements](#channel-elements)
 	- [Item](#item)
 	- [Example](#example)
+	- [Common Site API](#common-site-api)
 
 <!-- tocstop -->
 
@@ -62,3 +63,12 @@ ALL **DIS** (dynamic information syndication) should conform **JSON** specificat
 }
 ```
 
+## Common Site API
+`count`  
+Get `<= count` number of items  
+
+`pubDate`  
+Get `> pubDate` number of items  
+
+eg:  
+`newty.com/dis/uiuc-cs411?count=10&pubDate=1476564368038`  
