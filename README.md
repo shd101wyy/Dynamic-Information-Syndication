@@ -8,9 +8,8 @@ The specification might change in the future.
 
 - [Dynamic-Information-Syndication](#dynamic-information-syndication)
 	- [Introduction](#introduction)
-	- [Required channel elements](#required-channel-elements)
+	- [channel elements](#channel-elements)
 	- [Item](#item)
-	- [Common site api specification](#common-site-api-specification)
 	- [Example](#example)
 
 <!-- tocstop -->
@@ -24,41 +23,33 @@ ALL **DIS** (dynamic information syndication) should conform **JSON** specificat
 
 <strike> DIS document should have a mandatory field called `version` that specify the version of DIS that the document conforms to. </strike> **will be defined in the future.**  
 
-## Required channel elements   
+## channel elements   
 | Element  | Description | Example |  
 |---|---|---|
-| title | The name of the DIS service | zhihu.com feeds |
-| link | Thr URL to the HTML website | https://www.zhihu.com |  
-| description | Phrase or sentence describing the channel | The latest feeds from Zhihu |  
-| items | Array of **Item** ||
+| **title** | The name of the DIS service | UIUC CS411 course tracker |
+| link | Thr URL to the HTML website | https://courses.illinois.edu/schedule/2016/fall/CS/411 |  
+| description | Phrase or sentence describing the channel | Track the open/close status of UIUC CS411 |  
+| items | Array of **Item** ||  
+
+*bold means required*
 
 ## Item
 | Element | Description | Example |
 |---|---|---|
-| title | The title of item | How to be more clever? |  
+| title | The title of item | UIUC CS411 |  
 | pubDate | Indicate when the item was published | Sat Oct 15 2016 15:11:55 GMT-0500 (CDT) |
 | id | the unique id of the item | 1ha789 |
-| author | the author of the item | zhihu admin |
-| link | link related to author | https://www.zhihu.com/shd101wyy |
-| text | the content of item | How to be more clever, this is a good question |  
+| author | the author of the item | shd101wyy |
+| image | image related to author | |    
+| link | link related to author | https://github.com/shd101wyy |
+| text | the content of item | The class is opened |  
 | photos | array of photo urls | |
-
-
-## Common site api specification
-* `/website.com/dis`  
-return dis information
-* `/website/com/dis/get`    
-get all items  
-  * `/website.com/dis/get?count=10&config={}`  
-  get 10 items with config    
-  * `/wesite.com/dist/get?pubDate=1476564368038&config={}`  
-  get date newer than pubDate
 
 ## Example  
 ```json
 {
-  "title": "UIUC Course Explorer",
-  "link": "https://courses.illinois.edu/",
+  "title": "UIUC CS411",
+  "link": "https://courses.illinois.edu/schedule/2016/fall/CS/411",
   "items": [
     {
       "title": "CS411",
