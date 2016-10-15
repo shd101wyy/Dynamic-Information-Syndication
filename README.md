@@ -30,6 +30,7 @@ ALL **DIS** (dynamic information syndication) should conform **JSON** specificat
 | **title** | The name of the DIS service | UIUC CS411 course tracker |
 | link | Thr URL to the HTML website | https://courses.illinois.edu/schedule/2016/fall/CS/411 |  
 | description | Phrase or sentence describing the channel | Track the open/close status of UIUC CS411 |  
+| **pubDate** | The publish date of this DIS | Sat Oct 15 2016 15:11:55 GMT-0500 (CDT) |
 | items | Array of **Item** ||  
 
 *bold means required*
@@ -44,7 +45,8 @@ ALL **DIS** (dynamic information syndication) should conform **JSON** specificat
 | image | image related to author | |    
 | link | link related to author | https://github.com/shd101wyy |
 | text | the content of item | The class is opened |  
-| photos | array of photo urls | |
+| photos | array of photo urls | |  
+| videos | array of video urls | |  
 
 ## Example  
 ```json
