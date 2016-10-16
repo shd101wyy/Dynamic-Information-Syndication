@@ -47,6 +47,7 @@ ALL **DIS** (dynamic information syndication) should conform **JSON** specificat
 | text | the content of item | The class is opened |  
 | photos | array of photo urls | |  
 | videos | array of video urls | |  
+| markdown | markdown content | |   
 
 ## Example  
 ```json
