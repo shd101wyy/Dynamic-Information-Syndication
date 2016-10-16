@@ -67,7 +67,9 @@ ALL **DIS** (dynamic information syndication) should conform **JSON** specificat
 
 ## Common Site API
 `count`  
-Get `<= count` number of items  
+Get `<= count` number of items    
+`-1` means get all,  
+`0` means get 0.
 
 `pubDate`  
 Get `> pubDate` number of items  
