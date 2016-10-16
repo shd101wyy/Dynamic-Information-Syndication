@@ -1,4 +1,4 @@
-# Dynamic-Information-Syndication
+# Dynamic Information Syndication
 **0.0.1**  
 Dynamic Information Syndication standard based on RSS.  
 The specification might change in the future.  
@@ -6,7 +6,7 @@ The specification might change in the future.
 
 <!-- toc orderedList:0 -->
 
-- [Dynamic-Information-Syndication](#dynamic-information-syndication)
+- [Dynamic Information Syndication](#dynamic-information-syndication)
 	- [Introduction](#introduction)
 	- [channel elements](#channel-elements)
 	- [Item](#item)
@@ -67,14 +67,15 @@ ALL **DIS** (dynamic information syndication) should conform **JSON** specificat
 
 ## Common Site API
 **(not required but recommended)**  
-  
+
 `count`  
 Get `<= count` number of items    
 `-1` means get all,  
 `0` means get 0.
 
-`pubDate`  
-Get `> pubDate` number of items  
+`page`  
+eg: `?page=0&count=5` get 0~4 (inclusive) items  
+eg: `?page=1&count=5` get 5~9 (inclusive) items  
 
 eg:  
-`newty.com/dis/uiuc-cs411?count=10&pubDate=1476564368038`  
+`newty.com/dis/uiuc-cs411?count=10&page=0`  
