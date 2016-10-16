@@ -66,6 +66,8 @@ ALL **DIS** (dynamic information syndication) should conform **JSON** specificat
 ```
 
 ## Common Site API
+**(not required but recommended)**  
+  
 `count`  
 Get `<= count` number of items    
 `-1` means get all,  
