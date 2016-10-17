@@ -1,6 +1,6 @@
 # Dynamic Information Syndication
 **0.0.1**  
-Dynamic Information Syndication standard based on RSS.  
+Dynamic Information Syndication standard based on [RSS](https://cyber.harvard.edu/rss/rss.html) and [Atom](https://tools.ietf.org/html/rfc4287).  
 The specification might change in the future.  
 
 
@@ -30,7 +30,7 @@ ALL **DIS** (dynamic information syndication) should conform **JSON** specificat
 | **title** | The name of the DIS service | UIUC CS411 course tracker |
 | link | Thr URL to the HTML website | https://courses.illinois.edu/schedule/2016/fall/CS/411 |  
 | description | Phrase or sentence describing the channel | Track the open/close status of UIUC CS411 |  
-| **pubDate** | The publish date of this DIS | Sat Oct 15 2016 15:11:55 GMT-0500 (CDT) |
+| updated | The update date of this DIS | Sat Oct 15 2016 15:11:55 GMT-0500 (CDT) |
 | items | Array of **Item** ||  
 
 *bold means required*
@@ -38,9 +38,9 @@ ALL **DIS** (dynamic information syndication) should conform **JSON** specificat
 ## Item
 | Element | Description | Example |
 |---|---|---|
-| title | The title of item | UIUC CS411 |  
-| pubDate | Indicate when the item was published | Sat Oct 15 2016 15:11:55 GMT-0500 (CDT) |
-| id | the unique id of the item | 1ha789 |
+| **title** | The title of item | UIUC CS411 |  
+| **guid** | global unique identifier within the DIS | hSy7812 |
+| **updated** | Indicate when the item was updated | Sat Oct 15 2016 15:11:55 GMT-0500 (CDT) |
 | author | the author of the item | shd101wyy |
 | image | image related to author | |    
 | link | link related to author | https://github.com/shd101wyy |
@@ -57,9 +57,9 @@ ALL **DIS** (dynamic information syndication) should conform **JSON** specificat
   "items": [
     {
       "title": "CS411",
-      "pubDate": "Sat Oct 15 2016 15:38:49 GMT-0500 (CDT)",
+      "guid": "h123hj23",
+      "updated": "Sat Oct 15 2016 15:38:49 GMT-0500 (CDT)",
       "author": "shd101wyy",
-      "id": "5hjasd8",
       "text": "CS411 course opened https://courses.illinois.edu/schedule/2016/fall/CS/411"  
     }
   ]
