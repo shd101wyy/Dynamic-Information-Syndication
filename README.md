@@ -9,7 +9,7 @@ The specification might change in the future.
 - [Dynamic Information Syndication](#dynamic-information-syndication)
 	- [Introduction](#introduction)
 	- [channel elements](#channel-elements)
-	- [Item](#item)
+	- [Feed](#feed)
 	- [Example](#example)
 	- [Common Site API](#common-site-api)
 
@@ -31,32 +31,32 @@ ALL **DIS** (dynamic information syndication) should conform **JSON** specificat
 | **updated** | The update date of this DIS | Sat Oct 15 2016 15:11:55 GMT-0500 (CDT) |
 | link | Thr URL to the HTML website | https://courses.illinois.edu/schedule/2016/fall/CS/411 |  
 | description | Phrase or sentence describing the channel | Track the open/close status of UIUC CS411 |  
-| items | Array of **Item** ||  
+| feeds | Array of **feed** ||  
 
 *bold means required*
 
-## Item
+## Feed
 | Element | Description | Example |
 |---|---|---|
-| **title** | The title of item | UIUC CS411 |  
+| **title** | The title of feed | UIUC CS411 |  
 | **id** | global unique identifier within the DIS | hSy7812 |
-| **updated** | Indicate when the item was updated | Sat Oct 15 2016 15:11:55 GMT-0500 (CDT) |
-| author | the author of the item | shd101wyy |
+| **updated** | Indicate when the feed was updated | Sat Oct 15 2016 15:11:55 GMT-0500 (CDT) |
+| author | the author of the feed | shd101wyy |
 | image | image related to author | |    
 | link | link related to author | https://github.com/shd101wyy |
-| text | the content of item | The class is opened |  
+| text | the content of feed | The class is opened |  
 | photos | array of photo urls | |  
 | videos | array of video urls | |  
 | markdown | markdown content | |   
 
-`items` should be sorted by `updated`, from most recent to least recent.  
+`feeds` should be sorted by `updated`, from most recent to least recent.  
 
 ## Example  
 ```json
 {
   "title": "UIUC CS411",
   "link": "https://courses.illinois.edu/schedule/2016/fall/CS/411",
-  "items": [
+  "feeds": [
     {
       "title": "CS411",
       "id": "h123hj23",
@@ -72,13 +72,13 @@ ALL **DIS** (dynamic information syndication) should conform **JSON** specificat
 **(not required but recommended)**  
 
 `count`  
-Get `<= count` number of items    
+Get `<= count` number of feeds    
 `-1` means get all,  
 `0` means get 0.
 
 `page`  
-eg: `?page=0&count=5` get 0~4 (inclusive) items  
-eg: `?page=1&count=5` get 5~9 (inclusive) items  
+eg: `?page=0&count=5` get 0~4 (inclusive) feeds  
+eg: `?page=1&count=5` get 5~9 (inclusive) feeds  
 
 eg:  
 `newty.com/dis/uiuc-cs411?count=10&page=0`  
