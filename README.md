@@ -10,6 +10,7 @@ The specification might change in the future.
 	- [Introduction](#introduction)
 	- [channel elements](#channel-elements)
 	- [Feed](#feed)
+	- [One-Hour Rule](#one-hour-rule)
 	- [Example](#example)
 	- [Common Site API](#common-site-api)
 
@@ -31,6 +32,8 @@ ALL **DIS** (dynamic information syndication) should conform **JSON** specificat
 | **updated** | The update date of this DIS | Sat Oct 15 2016 15:11:55 GMT-0500 (CDT) |
 | link | Thr URL to the HTML website | https://courses.illinois.edu/schedule/2016/fall/CS/411 |  
 | description | Phrase or sentence describing the channel | Track the open/close status of UIUC CS411 |  
+| image | image of this DIS | |  
+| author | author of this DIS | |  
 | feeds | Array of **feed** ||  
 
 *bold means required*
@@ -38,18 +41,24 @@ ALL **DIS** (dynamic information syndication) should conform **JSON** specificat
 ## Feed
 | Element | Description | Example |
 |---|---|---|
-| **title** | The title of feed | UIUC CS411 |  
 | **id** | global unique identifier within the DIS | hSy7812 |
 | **updated** | Indicate when the feed was updated | Sat Oct 15 2016 15:11:55 GMT-0500 (CDT) |
 | author | the author of the feed | shd101wyy |
 | image | image related to author | |    
-| link | link related to author | https://github.com/shd101wyy |
+| link | link attached to title | https://github.com/shd101wyy |
+| title | The title of feed | UIUC CS411 |  
 | text | the content of feed | The class is opened |  
 | photos | array of photo urls | |  
 | videos | array of video urls | |  
 | markdown | markdown content | |   
+| html | html content | |  
+| <strike>categories</strike> | category of this feed | ['bilibili', '一人之下'] |
+| <strike>tags</strike> | tags of this feed | | 
 
 `feeds` should be sorted by `updated`, from most recent to least recent.  
+
+## One-Hour Rule  
+You can't remove a feed from your dis document until after 60 minutes.
 
 ## Example  
 ```json
