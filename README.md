@@ -34,7 +34,8 @@ ALL **DIS** (dynamic information syndication) should conform **JSON** specificat
 | description | Phrase or sentence describing the channel | Track the open/close status of UIUC CS411 |  
 | image | image of this DIS | |  
 | author | author of this DIS | |  
-| feeds | Array of **feed** ||  
+| feeds | Array of **feed** ||
+| tags | tags of this DIS. no space and case insensitive ||
 
 *bold means required*
 
@@ -50,10 +51,10 @@ ALL **DIS** (dynamic information syndication) should conform **JSON** specificat
 | text | the content of feed | The class is opened |  
 | photos | array of photo urls | |  
 | videos | array of video urls | |  
-| markdown | markdown content | |   
+| <strike>markdown</strike> | markdown content | |   
 | html | html content | |  
 | <strike>categories</strike> | category of this feed | ['bilibili', '一人之下'] |
-| <strike>tags</strike> | tags of this feed | | 
+| tags | tags of this feed. no space and case insensitive | |
 
 `feeds` should be sorted by `updated`, from most recent to least recent.  
 
@@ -65,6 +66,8 @@ You can't remove a feed from your dis document until after 60 minutes.
 {
   "title": "UIUC CS411",
   "link": "https://courses.illinois.edu/schedule/2016/fall/CS/411",
+	"updated": "Sat Oct 15 2016 15:38:49 GMT-0500 (CDT)",
+	"tags": ["UIUC", "courses", "CS411"],
   "feeds": [
     {
       "title": "CS411",
