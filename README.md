@@ -1,5 +1,5 @@
 # Dynamic Information Syndication
-动态信息聚合  **0.0.1**  
+动态信息聚合  **0.0.2**  
 Dynamic Information Syndication standard based on [RSS](https://cyber.harvard.edu/rss/rss.html) and [Atom](https://tools.ietf.org/html/rfc4287).  
 The specification might change in the future.  
 
@@ -8,8 +8,10 @@ The specification might change in the future.
 
 - [Dynamic Information Syndication](#dynamic-information-syndication)
 	- [Introduction](#introduction)
-	- [channel elements](#channel-elements)
+	- [DIS](#dis)
 	- [Feed](#feed)
+		- [Types of the feed](#types-of-the-feed)
+	- [Tags](#tags)
 	- [One-Hour Rule](#one-hour-rule)
 	- [Example](#example)
 	- [Common Site API](#common-site-api)
@@ -25,7 +27,7 @@ ALL **DIS** (dynamic information syndication) should conform **JSON** specificat
 
 <strike> DIS document should have a mandatory field called `version` that specify the version of DIS that the document conforms to. </strike> **will be defined in the future.**  
 
-## channel elements   
+## DIS   
 | Element  | Description | Example |  
 |---|---|---|
 | **title** | The name of the DIS service | UIUC CS411 course tracker |
@@ -35,7 +37,6 @@ ALL **DIS** (dynamic information syndication) should conform **JSON** specificat
 | image | image of this DIS | |  
 | author | author of this DIS | |  
 | feeds | Array of **feed** ||
-| tags | tags of this DIS. no space and case insensitive ||
 
 *bold means required*
 
@@ -44,19 +45,33 @@ ALL **DIS** (dynamic information syndication) should conform **JSON** specificat
 |---|---|---|
 | **id** | global unique identifier within the DIS | hSy7812 |
 | **updated** | Indicate when the feed was updated | Sat Oct 15 2016 15:11:55 GMT-0500 (CDT) |
-| author | the author of the feed | shd101wyy |
-| image | image related to author | |    
-| link | link attached to title | https://github.com/shd101wyy |
-| title | The title of feed | UIUC CS411 |  
-| text | the content of feed | The class is opened |  
-| photos | array of photo urls | |  
-| videos | array of video urls | |  
-| <strike>markdown</strike> | markdown content | |   
-| html | html content | |  
-| <strike>categories</strike> | category of this feed | ['bilibili', '一人之下'] |
-| tags | tags of this feed. no space and case insensitive | |
+| **type** | type of the feed | 'text' & 'article' |
+| **content** | content of the feed | |
 
-`feeds` should be sorted by `updated`, from most recent to least recent.  
+### Types of the feed
+* type: **article**    
+content:    
+
+| Element | Description | Example |  
+|---|---|---|
+| title | title of the article | 为什么我这么帅? |
+| link | link that this article should refer to | |
+| html | html content | |
+| markdown | markdown content | |  
+only one of `html` and `markdown` can be defined.  
+
+* type: **text**    
+content:  
+
+| Element | Description | Example |    
+|---|---|---|  
+| text | the content of the feed | |   
+| photos | array of photo urls | |   
+| videos | array of video urls | |  
+
+## Tags   
+tags are got from `description`, `html`, `markdown`, `text`.  
+tags should be defined as `\tag{content}`  
 
 ## One-Hour Rule  
 You can't remove a feed from your dis document until after 60 minutes.
@@ -70,11 +85,12 @@ You can't remove a feed from your dis document until after 60 minutes.
 	"tags": ["UIUC", "courses", "CS411"],
   "feeds": [
     {
-      "title": "CS411",
       "id": "h123hj23",
       "updated": "Sat Oct 15 2016 15:38:49 GMT-0500 (CDT)",
-      "author": "shd101wyy",
-      "text": "CS411 course opened https://courses.illinois.edu/schedule/2016/fall/CS/411"  
+      "type": "text",
+      "content": {
+        "text": "CS411 course opened https://courses.illinois.edu/schedule/2016/fall/CS/411"
+      }
     }
   ]
 }
