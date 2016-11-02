@@ -71,7 +71,7 @@ content:
 
 ## Tags   
 tags are got from `description`, `html`, `markdown`, `text`.  
-tags should be defined as `\tag{content}`  
+tags should be defined as `#tag{content}`  
 
 ## One-Hour Rule  
 You can't remove a feed from your dis document until after 60 minutes.
@@ -81,8 +81,8 @@ You can't remove a feed from your dis document until after 60 minutes.
 {
   "title": "UIUC CS411",
   "link": "https://courses.illinois.edu/schedule/2016/fall/CS/411",
-	"updated": "Sat Oct 15 2016 15:38:49 GMT-0500 (CDT)",
-	"tags": ["UIUC", "courses", "CS411"],
+  "updated": "Sat Oct 15 2016 15:38:49 GMT-0500 (CDT)",
+  "description": "#tag{UIUC}, #tag{courses}, #tag{CS411}",
   "feeds": [
     {
       "id": "h123hj23",
